@@ -1,0 +1,47 @@
+
+ROM used:   398/16384 (2%)
+            398/16384 (2%) including unused fragments
+
+            0.4 Average locations per line
+            28.4 Average locations per statement
+
+RAM used:   8/768 (1%) at main() level
+            15/768 (2%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   40    14 100  code_pic.c
+  949     0   0  C:\Program Files (x86)\PICC\Devices\18F4431.h
+----- -----
+  989    14 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     40   5    1             @delay_ms2
+0     22   3    0    108  1.7  QEI_init
+0    102  13    4    174  2.9  MAIN
+0    230  29    9             @PRINTF_LD_9600_31766_31767
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              14
+    Comments                165
+    Volume (V)              350
+    Difficulty (D)          4.3
+    Effort to implement (E) 1497
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    162
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-03FFE   394  15986  
+
+
+

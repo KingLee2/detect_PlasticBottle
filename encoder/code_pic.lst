@@ -1,0 +1,268 @@
+CCS PCH C Compiler, Version 5.101, 43599               12-Sep-23 12:50
+
+               Filename:   D:\LuanVanTotNghiep\PhanLoaiRac\code\encoder\code_pic.lst
+
+               ROM used:   398 bytes (2%)
+                           Largest free fragment is 15986
+               RAM used:   8 (1%) at main() level
+                           15 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   0128
+.................... #include <18F4431.h>
+.................... //////////// Standard Header file for the PIC18F4431 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC18F4431
+*
+001A:  MOVFF  FEA,0F
+001E:  MOVFF  FE9,0E
+0022:  BTFSS  08.7
+0024:  BRA    0036
+0026:  BSF    0E.7
+0028:  BTFSS  0E.4
+002A:  INCF   0E,F
+002C:  COMF   07,F
+002E:  COMF   08,F
+0030:  INCF   07,F
+0032:  BTFSC  FD8.2
+0034:  INCF   08,F
+0036:  SWAPF  08,W
+0038:  IORLW  F0
+003A:  MOVWF  0A
+003C:  ADDWF  0A,F
+003E:  ADDLW  E2
+0040:  MOVWF  0B
+0042:  ADDLW  32
+0044:  MOVWF  0D
+0046:  MOVF   08,W
+0048:  ANDLW  0F
+004A:  ADDWF  0B,F
+004C:  ADDWF  0B,F
+004E:  ADDWF  0D,F
+0050:  ADDLW  E9
+0052:  MOVWF  0C
+0054:  ADDWF  0C,F
+0056:  ADDWF  0C,F
+0058:  SWAPF  07,W
+005A:  ANDLW  0F
+005C:  ADDWF  0C,F
+005E:  ADDWF  0D,F
+0060:  RLCF   0C,F
+0062:  RLCF   0D,F
+0064:  COMF   0D,F
+0066:  RLCF   0D,F
+0068:  MOVF   07,W
+006A:  ANDLW  0F
+006C:  ADDWF  0D,F
+006E:  RLCF   0A,F
+0070:  MOVLW  07
+0072:  MOVWF  09
+0074:  MOVLW  0A
+0076:  DECF   0C,F
+0078:  ADDWF  0D,F
+007A:  BNC   0076
+007C:  DECF   0B,F
+007E:  ADDWF  0C,F
+0080:  BNC   007C
+0082:  DECF   0A,F
+0084:  ADDWF  0B,F
+0086:  BNC   0082
+0088:  DECF   09,F
+008A:  ADDWF  0A,F
+008C:  BNC   0088
+008E:  CLRF   FEA
+0090:  MOVLW  09
+0092:  MOVWF  FE9
+0094:  MOVLW  07
+0096:  ANDWF  0E,W
+0098:  BCF    0E.6
+009A:  MOVF   FED,F
+009C:  ANDWF  0E,W
+009E:  BNZ   00AE
+00A0:  BTFSC  0E.4
+00A2:  MOVF   FEE,F
+00A4:  BTFSC  0E.4
+00A6:  BRA    00AE
+00A8:  MOVLW  20
+00AA:  MOVWF  00
+00AC:  BRA    00EE
+00AE:  ADDWF  FE9,F
+00B0:  MOVLW  00
+00B2:  ADDWFC FEA,F
+00B4:  MOVF   FE9,W
+00B6:  SUBLW  0D
+00B8:  BNZ   00C0
+00BA:  MOVF   FEA,F
+00BC:  BNZ   00C0
+00BE:  BSF    0E.6
+00C0:  MOVF   FEF,W
+00C2:  MOVWF  00
+00C4:  BNZ   00D6
+00C6:  BTFSC  0E.6
+00C8:  BRA    00D6
+00CA:  BTFSC  0E.4
+00CC:  BRA    00F6
+00CE:  BTFSC  0E.3
+00D0:  BRA    00D6
+00D2:  MOVLW  20
+00D4:  BRA    00EC
+00D6:  BTFSS  0E.7
+00D8:  BRA    00E6
+00DA:  MOVLW  2D
+00DC:  MOVWF  00
+00DE:  MOVF   FED,W
+00E0:  BCF    0E.6
+00E2:  BCF    0E.7
+00E4:  BRA    00EE
+00E6:  BSF    0E.3
+00E8:  BCF    0E.4
+00EA:  MOVLW  30
+00EC:  ADDWF  00,F
+00EE:  MOVF   00,W
+00F0:  BTFSS  F9E.4
+00F2:  BRA    00F0
+00F4:  MOVWF  FAD
+00F6:  MOVF   FEE,W
+00F8:  BTFSS  0E.6
+00FA:  BRA    00B4
+00FC:  GOTO   016C (RETURN)
+.................... 
+.................... #list
+.................... 
+.................... #use delay(clock = 20M)
+.................... #use RS232(BAUD = 9600,XMIT = PIN_C6 , RCV = PIN_C7)
+.................... 
+.................... #FUSES NOWDT                    
+.................... #FUSES HS                       
+.................... #FUSES NOPROTECT                
+.................... #FUSES NOBROWNOUT             
+.................... #use delay(clock=20000000)
+0100:  CLRF   FEA
+0102:  MOVLW  08
+0104:  MOVWF  FE9
+0106:  MOVF   FEF,W
+0108:  BZ    0124
+010A:  MOVLW  06
+010C:  MOVWF  01
+010E:  CLRF   00
+0110:  DECFSZ 00,F
+0112:  BRA    0110
+0114:  DECFSZ 01,F
+0116:  BRA    010E
+0118:  MOVLW  7B
+011A:  MOVWF  00
+011C:  DECFSZ 00,F
+011E:  BRA    011C
+0120:  DECFSZ FEF,F
+0122:  BRA    010A
+0124:  GOTO   0186 (RETURN)
+.................... #byte QEICON   =0xfb6
+.................... #byte DFLTCON  =0xf60
+.................... #byte POSCNTH  =0xf67
+.................... #byte POSCNTL  =0xf66
+.................... #byte MAXCNTH  =0xf65
+.................... #byte MAXCNTL  =0xf64
+.................... 
+.................... 
+.................... void QEI_init()
+.................... {
+....................    QEICON   =  0b10111000;   
+*
+0004:  MOVLW  B8
+0006:  MOVWF  FB6
+....................    DFLTCON  =  0b00010110;
+0008:  MOVLW  16
+000A:  MOVWF  F60
+....................    POSCNTH  =  0xEF;
+000C:  MOVLW  EF
+000E:  MOVWF  F67
+....................    POSCNTL  =  0xff;
+0010:  SETF   F66
+....................    MAXCNTH  =  0xff;
+0012:  SETF   F65
+....................    MAXCNTL  =  0xff;
+0014:  SETF   F64
+0016:  GOTO   014A (RETURN)
+.................... }
+.................... 
+.................... void main()
+*
+0128:  CLRF   FF8
+012A:  BCF    FD0.7
+012C:  BSF    FAA.3
+012E:  MOVLW  08
+0130:  MOVWF  FAF
+0132:  MOVLW  02
+0134:  MOVWF  FB0
+0136:  MOVLW  A6
+0138:  MOVWF  FAC
+013A:  MOVLW  90
+013C:  MOVWF  FAB
+013E:  BCF    FB9.0
+0140:  BCF    FC1.6
+0142:  BCF    FC1.7
+0144:  MOVLW  00
+0146:  MOVWF  FB8
+.................... {  
+....................    QEI_init();
+0148:  BRA    0004
+....................    int16 xung;
+....................    xung = 0;
+014A:  CLRF   06
+014C:  CLRF   05
+....................    while(1)
+....................    {
+....................      xung = (make16(POSCNTH,POSCNTL))/4;
+014E:  RRCF   F67,W
+0150:  MOVWF  06
+0152:  RRCF   F66,W
+0154:  MOVWF  05
+0156:  RRCF   06,F
+0158:  RRCF   05,F
+015A:  MOVLW  3F
+015C:  ANDWF  06,F
+....................      printf("%ld\r\n",xung);
+015E:  MOVLW  10
+0160:  MOVWF  FE9
+0162:  MOVFF  06,08
+0166:  MOVFF  05,07
+016A:  BRA    001A
+016C:  MOVLW  0D
+016E:  BTFSS  F9E.4
+0170:  BRA    016E
+0172:  MOVWF  FAD
+0174:  MOVLW  0A
+0176:  BTFSS  F9E.4
+0178:  BRA    0176
+017A:  MOVWF  FAD
+....................      delay_ms(1000);
+017C:  MOVLW  04
+017E:  MOVWF  07
+0180:  MOVLW  FA
+0182:  MOVWF  08
+0184:  BRA    0100
+0186:  DECFSZ 07,F
+0188:  BRA    0180
+018A:  BRA    014E
+....................    }
+....................    }
+018C:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 3E0C   PUT NOBROWNOUT BORV20 NOWDT WDT32768 NOWINEN
+   Word  3: 9D3C   NOPWMPIN LPOL_HIGH HPOL_HIGH T1LOWPOWER FLTAC1 SSP_RC PWM4B5 EXCLKC3 MCLR
+   Word  4: 0081   STVREN NOLVP NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

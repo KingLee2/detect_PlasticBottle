@@ -1,0 +1,82 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005-006 MAIN.xung
+007-008 @PRINTF_LD_9600_31766_31767.P1
+007     MAIN.@SCRATCH1
+008     @delay_ms2.P1
+008     MAIN.@SCRATCH2
+009     @PRINTF_LD_9600_31766_31767.@SCRATCH1
+00A     @PRINTF_LD_9600_31766_31767.@SCRATCH2
+00B     @PRINTF_LD_9600_31766_31767.@SCRATCH3
+00C     @PRINTF_LD_9600_31766_31767.@SCRATCH4
+00D     @PRINTF_LD_9600_31766_31767.@SCRATCH5
+00E     @PRINTF_LD_9600_31766_31767.@SCRATCH6
+00F     @PRINTF_LD_9600_31766_31767.@SCRATCH7
+F60     DFLTCON
+F64     MAXCNTL
+F65     MAXCNTH
+F66     POSCNTL
+F67     POSCNTH
+F6C.2   FLTA
+F6C.6   FLTB
+FB6     QEICON
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  QEI_init
+00001A  @PRINTF_LD_9600_31766_31767
+000100  @delay_ms2
+000128  MAIN
+000128  @cinit1
+000148  @cinit2
+
+Project Directory:
+    D:\LuanVanTotNghiep\PhanLoaiRac\code\encoder\
+
+Project Files:
+    code_pic.c                                              [12-Sep-23 12:50  CRC=03AC7232]
+    C:\Program Files (x86)\PICC\Devices\18F4431.h           [21-Jan-21 11:37  CRC=1A59D329]
+
+Source signature=38601884
+Program memory checksum=0000
+Hex file CRC=00FF
+
+Units:
+    D:\LuanVanTotNghiep\PhanLoaiRac\code\encoder\code_pic (main)
+
+Compiler Settings:
+    Processor:      PIC18F4431
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:   CCS5
+
+Output Files:
+    XREF file:   code_pic.xsym
+    Errors:      code_pic.err
+    Ext Symbols: code_pic.esym
+    INHX32:      code_pic.hex
+    Symbols:     code_pic.sym
+    List:        code_pic.lst
+    Debug/COFF:  code_pic.cof
+    Project:     code_pic.ccspjt
+    Call Tree:   code_pic.tre
+    Statistics:  code_pic.STA

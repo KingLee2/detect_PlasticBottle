@@ -1,0 +1,5 @@
+Compiling D:\LuanVanTotNghiep\PhanLoaiRac\code\encoder\code_pic on 12-Sep-23 at 12:50
+>>> Warning 203 "D:\LuanVanTotNghiep\PhanLoaiRac\code\encoder\code_pic.c" Line 33(1,1): Condition always TRUE
+      Memory usage:   ROM=2%      RAM=1% - 2%
+      0 Errors,  1 Warnings.
+Build Successful.

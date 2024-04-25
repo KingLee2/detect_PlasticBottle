@@ -1,0 +1,7 @@
+ÀÄcode_pic
+   ÀÄMAIN  0/102  Ram=4
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@cinit2  (Inline)  Ram=0
+      ÃÄQEI_init  0/22  Ram=0
+      ÃÄ@PRINTF_LD_9600_31766_31767  0/230  Ram=9
+      ÀÄ@delay_ms2  0/40  Ram=1
